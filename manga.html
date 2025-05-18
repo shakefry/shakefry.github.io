@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>ブログ</title>
+    <style>
+      html, body {
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+      }
+      body {
+        font-family: sans-serif;
+        background-color: #fff;
+        color:#333;
+        padding: 20px;
+      }
+      .toptitle {
+        height: 80px;
+        text-align: center;
+        color: #333;
+        margin-left: 180px; /* sidebarの幅と同じ */
+      }
+      .title-image {
+        height: 60px;
+        max-width: 100%;
+        object-fit: contain;
+      }
+      .manga-image {
+        width: 300px;
+        object-fit: contain;
+      }
+      .container {
+        display: flex;
+        height: calc(100vh - 80px);
+      }
+      .main-content {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 20px;
+        box-sizing: border-box;
+        height: 100%; /* ✔ 高さを確保してスクロールできるようにする */
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      #sidebar {
+        width: 200px; 
+        padding: 20px;
+        box-sizing: border-box;
+        border-right: 1px solid #333;
+      }
+      #sidebar ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      #sidebar li {
+        margin: 10px 0;
+      }
+      #sidebar a {
+        text-decoration: none;
+        background-color: #333;
+        color: #FFFFFF;
+        font-size:20px
+      }
+      #sidebar a:hover {
+        background-color: #555;
+      }
+      details summary {
+        display: inline;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+        font-size: 20px;
+      }
+      details summary::-webkit-details-marker {
+        display: none;             /* Chrome/Safari対策 */
+      }
+      details summary {
+        display: inline;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+        font-size: 20px;
+      }
+      .menu-summary {
+        font-size: 20px;
+        background-color: #333;
+        color: white;
+        cursor: pointer;
+      }
+      .menu-summary:hover {
+        background-color: #555; /* ホバー時の色 */
+      }
+      .entry {
+        border: 1px solid #333;
+        padding: 10px;
+        margin: 0 auto 30px auto;
+        width: 300px;
+        position: relative;
+      }
+      .entry .date {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 0.9em;
+        color: #333;
+      }
+      .entry .title {
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-bottom: 5px;
+        color: #333;
+      }
+      .reply-box {
+        border: 1px solid #333;
+        padding: 10px;
+        margin: 10px 0;
+        width: 300px;
+        height: 300px;
+      }
+      .template-box {
+        border: 1px solid #333;
+        padding: 10px;
+        margin: 10px 0;
+        width: 200px;
+        height: 200px;
+        box-sizing: border-box;
+        font-size: 0.9em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .template-label {
+        font-size: 0.8em;
+        color: #333;
+        text-align: right;
+      }
+      img.placeholder {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="toptitle">
+        <img src="resource/shaketitle.PNG" alt="シャケフラ（イ）宣言" class="title-image">
+      </div>
+    <div class="container">
+        <div id="sidebar">
+          <ul>
+            <li><a href="シャケフラ(イ)宣言.html">ニッキ</a></li>
+            <li>
+            <details>
+            <summary class="menu-summary">マンガ</summary>
+            <ul style="padding-left: 15px;">
+              <li><a href="マンガ.html#new">ニュー</a></li>
+              <li><a href="#mangawatashi">ワタシ</a></li>
+            </ul>
+            </details>
+            </li>
+            <li>
+            <details>
+            <summary class="menu-summary">シャケ</summary>
+            <ul style="padding-left: 15px;">
+              <li><a href="#vlog3">グ</a></li>
+            </ul>
+            </details>
+            </li>
+          </ul>
+        </div>
+
+      <div class="main-content">
+        <div class="entry">
+          <div class="title">とぐ</div>
+          <div class="date">2025年5月18日</div>
+            <img src="resource/manga_1.PNG" alt="マンガ１" class="manga-image">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
