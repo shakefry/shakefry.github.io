@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>曲リスト</title>
+    <style>
+      html, body {
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+      }
+      body {
+        font-family: sans-serif;
+        background-color: #fff;
+        color: #333;
+        padding: 20px;
+      }
+      .toptitle {
+        height: 80px;
+        text-align: center;
+        color: #333;
+        margin-left: 180px;
+      }
+      .title-image {
+        height: 60px;
+        max-width: 100%;
+        object-fit: contain;
+      }
+      .music-image {
+        width: 300px;
+        object-fit: contain;
+      }
+      .container {
+        display: flex;
+        height: calc(100vh - 80px);
+      }
+      .main-content {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 20px;
+        box-sizing: border-box;
+        height: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      #sidebar {
+        width: 200px;
+        padding: 20px;
+        box-sizing: border-box;
+        border-right: 1px solid #333;
+      }
+      #sidebar ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      #sidebar li {
+        margin: 10px 0;
+      }
+      #sidebar a {
+        text-decoration: none;
+        background-color: #333;
+        color: #FFFFFF;
+        font-size: 20px;
+      }
+      #sidebar a:hover {
+        background-color: #555;
+      }
+      details summary {
+        display: inline;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+        font-size: 20px;
+      }
+      details summary::-webkit-details-marker {
+        display: none;             /* Chrome/Safari対策 */
+      }
+      .menu-summary {
+        font-size: 20px;
+        background-color: #333;
+        color: white;
+        cursor: pointer;
+      }
+      .menu-summary:hover {
+        background-color: #555;
+      }
+      .entry {
+        border: 1px solid #333;
+        padding: 10px;
+        margin: 0 auto 30px auto;
+        width: 300px;
+        position: relative;
+      }
+      .entry .date {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 0.9em;
+        color: #333;
+      }
+      .entry .title {
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-bottom: 5px;
+        color: #333;
+      }
+      .media-controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      .media-controls audio {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .row-buttons {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 10%;
+      }
+      .row-buttons button {
+        font-size: 1em;
+        padding: 5px 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toptitle">
+      <img src="resource/shaketitle.PNG" alt="シャケフラ（イ）宣言" class="title-image">
+    </div>
+    <div class="container">
+      <div id="sidebar">
+        <ul>
+          <li><a href="index.html">ニッキ</a></li>
+          <li>
+            <details>
+              <summary class="menu-summary">マンガ</summary>
+              <ul style="padding-left: 15px;">
+                <li><a href="manga.html#new">ニュー</a></li>
+                <li><a href="watashi.html">ワタシ</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary class="menu-summary">シャケ</summary>
+              <ul style="padding-left: 15px;">
+                <li><a href="gu.html">グ</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
+      <div class="main-content">
+        <div class="entry">
+          <div class="title">曲タイトル例1</div> 
+          <div class="date">2023年10月1日</div>
+          <img src="resource/watashi.PNG" alt="イメージ画像1" class="music-image">
+          <div class="media-controls">
+            <audio id="audio1" src="resource/haibane1.wav"></audio>
+            <div class="row-buttons">
+              <button onclick="playAudio('audio1')">再生</button>
+              <button onclick="pauseAudio('audio1')">停止</button>
+            </div>
+          </div>
+        </div>
+        <!-- 追加の曲エントリーも同じ形式で増やせます -->
+      </div>
+    </div>
+  </body>
+
+<script>
+function playAudio(id) {
+  var audio = document.getElementById(id);
+  audio.play();
+}
+function pauseAudio(id) {
+  var audio = document.getElementById(id);
+  audio.pause();
+  audio.currentTime = 0;
+}
+</script>
+</html>
